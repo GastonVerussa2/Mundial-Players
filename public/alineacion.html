@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armá tu 11 - Mundial Players</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body data-pagina="alineacion">
+
+    <div id="encabezado"></div>
+
+    <main>
+        <section class="seccion-alineacion">
+            <h2>Armá tu 11 ideal</h2>
+
+            <p>
+                Elegí tus jugadores favoritos y formá tu equipo ideal.
+            </p>
+
+            <div class="controles-alineacion">
+                <label for="formacion">Elegí una formación:</label>
+
+                <select id="formacion">
+                    <option value="4-3-3">4-3-3</option>
+                    <option value="4-4-2">4-4-2</option>
+                    <option value="3-5-2">3-5-2</option>
+                </select>
+            </div>
+
+            <div id="cancha" class="cancha">
+                <!-- Acá aparecerán los jugadores -->
+            </div>
+
+            <button id="limpiar-equipo">
+                Limpiar equipo
+            </button>
+        </section>
+    </main>
+
+    <div id="pie-pagina"></div>
+
+    <script src="js/componentes.js"></script>
+    <script src="js/alineacion.js"></script>
+
+</body>
+</html>
+

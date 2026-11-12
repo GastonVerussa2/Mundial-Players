@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugadores - Mundial Players</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body data-pagina="jugadores">
+
+    <div id="encabezado"></div>
+
+   
+<main>
+        <h2>Jugadores del Mundial 2026</h2>
+
+        <label for="filtro-seleccion">Elegí una selección:</label>
+
+        <select id="filtro-seleccion">
+            <option value="">Todas las selecciones</option>
+        </select>
+
+        <section class="carrusel">
+            <button class="flecha izquierda" type="button"
+                    aria-label="Anterior">❮</button>
+
+            <section class="jugadores" id="lista-jugadores"></section>
+
+            <button class="flecha derecha" type="button"
+                    aria-label="Siguiente">❯</button>
+        </section>
+
+        <p id="mensaje" role="status" aria-live="polite"></p>
+    </main>
+
+<div id="pie-pagina"></div>
+
+    <script src="js/componentes.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/jugadores.js"></script>
+
+</body>
+</html>
