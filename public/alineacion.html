@@ -35,13 +35,54 @@
                 <!-- Acá aparecerán los jugadores -->
             </div>
 
-            <button id="limpiar-equipo">
-                Limpiar equipo
-            </button>
+           <div class="acciones-alineacion">
+
+    <button id="limpiar-equipo">
+        Limpiar equipo
+    </button>
+
+    <button id="guardar-alineacion">
+        Guardar alineación
+    </button>
+
+</div>
+
+<section class="alineaciones-guardadas">
+    <h3>Mis alineaciones</h3>
+
+    <div id="lista-alineaciones">
+        <!-- Acá aparecerán las alineaciones guardadas -->
+    </div>
+</section>
         </section>
     </main>
 
-    <div id="pie-pagina"></div>
+    
+<!-- Ventana para seleccionar jugadores -->
+<div id="modal-jugadores" class="modal-jugadores">
+
+    <div class="contenido-modal">
+
+        <div class="encabezado-modal">
+            <h3>Elegí un jugador</h3>
+
+            <button id="cerrar-modal" type="button">
+                ✕
+            </button>
+        </div>
+<input
+    type="text"
+    id="buscador-pais"
+    placeholder="Buscar por país..."
+>
+        <div id="lista-jugadores" class="lista-jugadores">
+            <!-- Acá aparecerán las tarjetas de jugadores -->
+        </div>
+
+    </div>
+
+</div>
+
 
     <script src="js/componentes.js"></script>
     <script src="js/alineacion.js"></script>

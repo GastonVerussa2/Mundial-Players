@@ -286,3 +286,331 @@ footer {
     font-weight: bold;
     margin-top: 8px;
 }
+
+/* BOTONES DE ALINEACIÓN */
+
+.acciones-alineacion {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.acciones-alineacion button,
+.tarjeta-alineacion button {
+    background-color: #0756a3;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.acciones-alineacion button:hover,
+.tarjeta-alineacion button:hover {
+    background-color: #043d75;
+}
+
+
+/* VENTANA DE SELECCIÓN */
+
+.modal-jugadores {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-visible {
+    display: flex;
+}
+
+.contenido-modal {
+    background-color: white;
+    width: 100%;
+    max-width: 850px;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.encabezado-modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.encabezado-modal h3 {
+    color: #0756a3;
+    margin: 0;
+}
+
+#cerrar-modal {
+    background-color: #0756a3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+/* TARJETAS DE JUGADORES */
+
+.lista-jugadores {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta-jugador {
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta-jugador:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px #aaa;
+}
+
+.tarjeta-jugador img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.tarjeta-jugador h4 {
+    color: #0756a3;
+    margin: 10px 0 5px;
+}
+
+.tarjeta-jugador p {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+
+/* ALINEACIONES GUARDADAS */
+
+.alineaciones-guardadas {
+    max-width: 750px;
+    margin: 35px auto;
+}
+
+.alineaciones-guardadas h3 {
+    color: #0756a3;
+}
+
+.tarjeta-alineacion {
+    background-color: white;
+    padding: 18px;
+    margin: 12px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #ccc;
+}
+
+.tarjeta-alineacion button {
+    margin: 5px;
+}
+
+
+/* ADAPTACIÓN PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    .contenido-modal {
+        padding: 15px;
+    }
+
+    .lista-jugadores {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .tarjeta-jugador img {
+        height: 120px;
+    }
+
+    .cancha {
+        padding: 10px;
+        min-height: 450px;
+    }
+
+    .circulo-jugador {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .espacio-jugador p {
+        font-size: 11px;
+    }
+}
+
+/* RESPONSIVE GENERAL */
+
+/* Tablets */
+@media (max-width: 900px) {
+
+    main {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .jugadores {
+        gap: 15px;
+    }
+
+    .jugador {
+        flex: 0 0 220px;
+    }
+
+    .cancha {
+        width: 100%;
+    }
+
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+
+    /* Encabezado */
+    header {
+        padding: 15px 10px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .logo {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* Menú */
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 15px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    /* Contenido */
+    main {
+        margin: 10px auto;
+        padding: 12px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    /* Carrusel */
+    .carrusel {
+        gap: 5px;
+    }
+
+    .jugadores {
+        gap: 12px;
+        padding: 5px;
+    }
+
+    .jugador {
+        flex: 0 0 180px;
+    }
+
+    .jugador img {
+        height: 190px;
+    }
+
+    .flecha {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+
+    /* Detalle */
+    .detalle {
+        padding: 18px;
+        gap: 15px;
+    }
+
+    /* Armador */
+    .seccion-alineacion {
+        padding: 15px 5px;
+    }
+
+    .fila-jugadores {
+        gap: 3px;
+    }
+
+    .espacio-jugador {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .espacio-jugador p {
+        overflow-wrap: anywhere;
+    }
+
+    .acciones-alineacion {
+        margin: 15px 0;
+        gap: 10px;
+    }
+
+    .acciones-alineacion button {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    /* Ventana de jugadores */
+    .modal-jugadores {
+        padding: 10px;
+    }
+
+    .contenido-modal {
+        max-height: 90vh;
+        padding: 15px;
+    }
+
+    /* Alineaciones guardadas */
+    .tarjeta-alineacion {
+        padding: 12px;
+    }
+
+    footer {
+        padding: 15px 10px;
+        font-size: 13px;
+    }
+
+}

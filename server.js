@@ -4,12 +4,15 @@ const path = require("path");
 const jugadoresRoutes = require("./routes/jugadores.routes");
 const app = express();
 const PORT = 3000;
-
+const alineacionesRoutes = require("./routes/alineaciones.routes");
 // Permite recibir datos en formato JSON
 app.use(express.json());
 
 // Usar las rutas de jugadores
 app.use("/api/jugadores", jugadoresRoutes);
+
+// Usar las rutas de alineaciones
+app.use("/api/alineaciones", alineacionesRoutes);
 
 // Permite mostrar los archivos de nuestra página web
 app.use(express.static(path.join(__dirname, "public")));
