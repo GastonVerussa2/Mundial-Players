@@ -268,18 +268,34 @@ footer {
     text-align: center;
 }
 
+
 .circulo-jugador {
     width: 55px;
-    height: 55px;
-    border: 2px solid white;
-    border-radius: 50%;
+    height: 65px;
+    border: none;
+    border-radius: 0;
+    background-color: white;
+    color: #0756a3;
+    clip-path: polygon(
+        30% 0, 42% 0, 50% 12%, 58% 0,
+        70% 0, 100% 22%, 82% 45%,
+        72% 36%, 72% 100%, 28% 100%,
+        28% 36%, 18% 45%, 0 22%
+    );
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
-    font-size: 25px;
+    padding: 0;
+    font-size: 22px;
+    font-weight: bold;
     cursor: pointer;
 }
+
+.circulo-jugador:hover {
+    background-color: #dceaff;
+}
+
 
 .espacio-jugador p {
     font-size: 14px;
@@ -454,10 +470,10 @@ footer {
     }
 
     .circulo-jugador {
-        width: 42px;
-        height: 42px;
-        font-size: 18px;
-    }
+    width: 42px;
+    height: 50px;
+    font-size: 17px;
+}
 
     .espacio-jugador p {
         font-size: 11px;
@@ -613,4 +629,162 @@ footer {
         font-size: 13px;
     }
 
+}
+
+/* MOMENTOS INOLVIDABLES */
+
+.seccion-momentos {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.seccion-momentos > p {
+    margin-bottom: 30px;
+}
+
+.contenedor-momentos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.tarjeta-momento {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px #c5c5c5;
+    text-align: left;
+    transition: transform 0.2s;
+}
+
+.tarjeta-momento:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta-momento img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.tarjeta-momento h3,
+.tarjeta-momento p {
+    margin: 15px 20px;
+}
+
+.tarjeta-momento h3 {
+    color: #0756a3;
+}
+
+.tarjeta-momento a {
+    display: inline-block;
+    margin: 5px 20px 20px;
+    padding: 10px 16px;
+    background-color: #0756a3;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.tarjeta-momento a:hover {
+    background-color: #043d75;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+    .contenedor-momentos {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-momento img {
+        height: 210px;
+    }
+}
+
+/* VENTANA DE VIDEOS */
+
+.ventana-video {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.ventana-video.activa {
+    display: flex;
+}
+
+.contenido-video {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    background-color: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.contenido-video iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+}
+
+.cerrar-video {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background-color: #0756a3;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.cerrar-video:hover {
+    background-color: #043d75;
+}
+
+/* AJUSTE PARA CELULARES */
+
+@media (max-width: 600px) {
+    .ventana-video {
+        padding: 10px;
+    }
+
+    .cerrar-video {
+        width: 32px;
+        height: 32px;
+        font-size: 23px;
+    }
+}
+
+/* PORTADA PRINCIPAL */
+
+.portada {
+    width: 100%;
+    margin: 0 auto 35px;
+    overflow: hidden;
+}
+
+.portada img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }

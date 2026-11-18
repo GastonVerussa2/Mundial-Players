@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +12,12 @@
 
     <div id="encabezado"></div>
 
-    <main>
+<main>
+
+    <section class="portada">
+        <img src="img/portada.png" alt="Mundial Players - Pasión, historia y fútbol">
+    </section>
+    
         <section>
             <h2>Jugadores de los Mundiales</h2>
 
@@ -24,9 +30,104 @@
                 Ver jugadores
             </a>
         </section>
+
+        <section class="seccion-momentos">
+
+            <h2>Momentos inolvidables del fútbol</h2>
+
+            <p>
+                Reviví algunos de los momentos más históricos
+                de las grandes leyendas del fútbol.
+            </p>
+
+            <div class="contenedor-momentos">
+
+                <article class="tarjeta-momento">
+                    <img src="img/momentos/messi.jpg" alt="Lionel Messi campeón del mundo">
+                    <h3>Lionel Messi 🇦🇷</h3>
+                    <p>La consagración en el Mundial de Qatar 2022.</p>
+                    <a href="#" onclick="abrirVideo(event, 'zhEWqfP6V_w')">
+                        Ver momento
+                    </a>
+                </article>
+
+                <article class="tarjeta-momento">
+                    <img src="img/momentos/cristiano.jpg" alt="Cristiano Ronaldo con la Eurocopa">
+                    <h3>Cristiano Ronaldo 🇵🇹</h3>
+                    <p>Portugal conquista la Eurocopa 2016.</p>
+                    <a href="#" onclick="abrirVideo(event, '4mGv60SVH_c')">
+                        Ver momento
+                    </a>
+                </article>
+
+                <article class="tarjeta-momento">
+                    <img src="img/momentos/maradona.jpg" alt="Diego Maradona en México 1986">
+                    <h3>Diego Maradona 🇦🇷</h3>
+                    <p>El histórico Gol del Siglo en México 1986.</p>
+                    <a href="#" onclick="abrirVideo(event, 'FRAbNlPS2MI')">
+                        Ver momento
+                    </a>
+                </article>
+
+                <article class="tarjeta-momento">
+                    <img src="img/momentos/zidane.jpg" alt="Zinedine Zidane campeón del mundo">
+                    <h3>Zinedine Zidane 🇫🇷</h3>
+                    <p>Sus dos goles en la final del Mundial 1998.</p>
+                    <a href="#" onclick="abrirVideo(event, 'tmjFa9LB7Pg')">
+                        Ver momento
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- VENTANA EMERGENTE DEL VIDEO -->
+        <div id="ventana-video" class="ventana-video" onclick="cerrarVideo()">
+
+            <div class="contenido-video" onclick="event.stopPropagation()">
+
+                <button class="cerrar-video" onclick="cerrarVideo()">
+                    &times;
+                </button>
+
+                <iframe
+                    id="reproductor-video"
+                    src=""
+                    title="Video de un momento histórico del fútbol"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+        </div>
+
     </main>
 
     <div id="pie-pagina"></div>
-<script src="js/componentes.js"></script>
+
+    <script src="js/componentes.js"></script>
+
+    <script>
+        function abrirVideo(event, idVideo) {
+            event.preventDefault();
+
+            const ventana = document.getElementById("ventana-video");
+            const reproductor = document.getElementById("reproductor-video");
+
+            reproductor.src =
+                "https://www.youtube-nocookie.com/embed/" + idVideo + "?autoplay=1";
+
+            ventana.classList.add("activa");
+        }
+
+        function cerrarVideo() {
+            const ventana = document.getElementById("ventana-video");
+            const reproductor = document.getElementById("reproductor-video");
+
+            ventana.classList.remove("activa");
+            reproductor.src = "";
+        }
+    </script>
+
 </body>
 </html>

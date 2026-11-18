@@ -46,28 +46,16 @@ function mostrarJugadores() {
         imagen.src = jugador.imagen;
         imagen.alt = jugador.nombre;
 
-        const nombre = document.createElement("h3");
-        nombre.textContent = jugador.nombre;
-
-        const seleccion = document.createElement("p");
-        seleccion.textContent = jugador.seleccion;
-
-        const posicion = document.createElement("p");
-        posicion.textContent = jugador.posicion;
-
-        const dorsal = document.createElement("p");
-        dorsal.textContent = "Dorsal: " + jugador.dorsal;
+        
 
         const enlace = document.createElement("a");
         enlace.href = "detalle.html?jugador=" + jugador.id;
         enlace.textContent = "Ver detalle";
-
-        tarjeta.appendChild(imagen);
+const nombre = document.createElement("h3");
+nombre.textContent = jugador.nombre;
         tarjeta.appendChild(nombre);
-        tarjeta.appendChild(seleccion);
-        tarjeta.appendChild(posicion);
-        tarjeta.appendChild(dorsal);
-        tarjeta.appendChild(enlace);
+        tarjeta.appendChild(imagen);
+tarjeta.appendChild(enlace);
 
         listaJugadores.appendChild(tarjeta);
     });
